@@ -362,7 +362,33 @@ input{
     </div>
 
 </div>
+<div
+    id="step3"
+    class="step">
 
+    <div class="card">
+
+        <h2>
+            🏅 特質徽章
+        </h2>
+
+        <div
+            id="badgesContainer">
+        </div>
+
+        <br>
+
+        <button
+            class="btn"
+            onclick="showStory()">
+
+            📖 查看冒險故事
+
+        </button>
+
+    </div>
+
+</div>
     <div
         id="anonymousCard"
         class="result hidden">
@@ -650,10 +676,34 @@ function generateAnonymousCard(
       
 function showBadges(){
 
-    alert(
-        "下一關：特質徽章（V0.6-4）"
-    );
+    document
+        .getElementById(
+            "step2"
+        )
+        .classList.remove(
+            "active"
+        );
 
+    document
+        .getElementById(
+            "step3"
+        )
+        .classList.add(
+            "active"
+        );
+      
+document
+    .getElementById(
+        "badgesContainer"
+    )
+    .innerHTML = `
+        <ul>
+            <li>📚 好學探索家</li>
+            <li>🎵 音樂能量家</li>
+            <li>🤝 友善合作王</li>
+        </ul>
+    `;
+      
 }
       
 function resetData(){
