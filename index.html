@@ -187,7 +187,15 @@ input{
     display:none;
 
 }
+      
+.step{
+    display:none;
+}
 
+.step.active{
+    display:block;
+}
+      
 .footer{
 
     text-align:center;
@@ -223,7 +231,9 @@ input{
 <div class="container">
 
     <!-- 首頁 -->
-
+<div
+    id="step0"
+    class="step active">
     <div class="card hero">
 
         <div class="logo">
@@ -264,12 +274,15 @@ input{
         </button>
 
     </div>
-
+</div>
     <!-- 報到區 -->
-
-    <div
-        id="onboarding"
-        class="card form-section">
+<div
+    id="step1"
+    class="step">
+      
+<div
+    id="onboarding"
+    class="card">
 
         <h2>
             🎒 入隊報到
@@ -321,9 +334,11 @@ input{
         <div
             id="result"
             class="result hidden">
-        </div>
+         </div>
 
     </div>
+
+</div>
 
     <div
         id="anonymousCard"
@@ -339,22 +354,27 @@ input{
 </div>
 
 <script>
-    function startAdventure(){
+ffunction startAdventure(){
 
-    const onboarding =
-        document.getElementById(
-            "onboarding"
+    document
+        .getElementById("step0")
+        .classList.remove(
+            "active"
         );
 
-    onboarding.classList.add(
-        "show"
-    );
+    document
+        .getElementById("step1")
+        .classList.add(
+            "active"
+        );
 
-    onboarding.scrollIntoView({
+    document
+        .getElementById("step1")
+        .scrollIntoView({
 
-        behavior:"smooth"
+            behavior:"smooth"
 
-    });
+        });
 
 }
 
