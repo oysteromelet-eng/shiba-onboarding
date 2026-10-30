@@ -248,7 +248,15 @@ input{
             🐕 生成角色卡
 
         </button>
+<br><br>
 
+<button
+    class="btn"
+    onclick="resetData()">
+
+    🗑️ 重新開始
+
+</button>
         <div
             id="result"
             class="result hidden">
@@ -476,6 +484,58 @@ function generateAnonymousCard(
 );
 
 }
+}
+
+function resetData(){
+
+    if(
+        !confirm(
+            "確定要重新開始嗎？"
+        )
+    ){
+        return;
+    }
+
+    localStorage.removeItem(
+        "name"
+    );
+
+    localStorage.removeItem(
+        "subject"
+    );
+
+    localStorage.removeItem(
+        "talent"
+    );
+
+    localStorage.removeItem(
+        "interest"
+    );
+
+    localStorage.removeItem(
+        "dream"
+    );
+
+    localStorage.removeItem(
+        "characterCard"
+    );
+
+    localStorage.removeItem(
+        "anonymousCard"
+    );
+
+    location.reload();
+
+}
+
+function generateCard(){
+
+    const name =
+        document.getElementById("name")
+        .value.trim();
+
+    ...
+    
 function generateCard(){
 
 const name =
