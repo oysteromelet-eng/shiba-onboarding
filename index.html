@@ -331,10 +331,33 @@ input{
 
         </button>
 
+<div
+    id="step2"
+    class="step">
+
+    <div class="card">
+
+        <h2>
+            🐕 你的柴柴代號
+        </h2>
+
         <div
-            id="result"
-            class="result hidden">
-         </div>
+            id="result">
+        </div>
+
+        <br>
+
+        <button
+            class="btn"
+            onclick="showBadges()">
+
+            🏅 領取徽章
+
+        </button>
+
+    </div>
+
+</div>
 
     </div>
 
@@ -624,7 +647,15 @@ function generateAnonymousCard(
     );
 
 }
+      
+function showBadges(){
 
+    alert(
+        "下一關：特質徽章（V0.6-4）"
+    );
+
+}
+      
 function resetData(){
 
     if(
@@ -708,10 +739,21 @@ function generateCard(){
             "result"
         );
 
-    result.classList.remove(
-        "hidden"
+document
+    .getElementById(
+        "step1"
+    )
+    .classList.add(
+        "active"
     );
-
+document
+    .getElementById(
+        "step2"
+    )
+    .classList.remove(
+        "active"
+    );
+      
     result.innerHTML = `
 
         <h3>🎉 入隊成功！</h3>
