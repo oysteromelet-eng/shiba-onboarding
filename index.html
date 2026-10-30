@@ -2,7 +2,6 @@
 <html lang="zh-Hant">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,198 +12,122 @@
 body{
     margin:0;
     font-family:"Microsoft JhengHei",sans-serif;
-
-    background:linear-gradient(
-        135deg,
-        #eff6ff,
-        #dbeafe
-    );
-
+    background:linear-gradient(135deg,#eff6ff,#dbeafe);
     min-height:100vh;
-
     padding:20px;
 }
 
 .container{
-
     max-width:800px;
     margin:auto;
-
 }
 
 .card{
-
     background:white;
-
     border-radius:24px;
-
     padding:40px;
-
     text-align:center;
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.1);
-
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
     margin-bottom:20px;
 }
 
 .logo{
-
     font-size:80px;
-
 }
 
-h1{
-
+h1,h2{
     color:#2563eb;
-    margin-top:10px;
-
-}
-
-h2{
-
-    color:#2563eb;
-
 }
 
 .subtitle{
-
     font-size:18px;
-
     line-height:1.8;
-
     color:#475569;
-
     margin:20px 0;
-
 }
 
 .features{
-
     text-align:left;
-
     max-width:300px;
-
     margin:auto;
 }
 
 .features p{
-
     font-size:18px;
     margin:12px 0;
-
 }
 
 .btn{
-
     display:inline-block;
-
     background:#2563eb;
-
     color:white;
-
     text-decoration:none;
-
     padding:14px 30px;
-
     border-radius:999px;
-
     font-size:20px;
-
     font-weight:bold;
-
     border:none;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
 .btn:hover{
-
     background:#1d4ed8;
-
 }
 
 input{
-
     width:100%;
-
     padding:12px;
-
     margin-bottom:15px;
-
     border:1px solid #d1d5db;
-
     border-radius:12px;
-
     font-size:16px;
-
     box-sizing:border-box;
 }
 
 .result{
-
     margin-top:20px;
-
     background:#ecfdf5;
-
     border:2px solid #10b981;
-
     border-radius:16px;
-
     padding:20px;
-
     text-align:left;
 }
 
 .codeName{
-
     font-size:24px;
     font-weight:bold;
     color:#2563eb;
 }
 
 .footer{
-
     margin-top:20px;
-
     color:#64748b;
-
     font-size:14px;
+    text-align:center;
 }
 
 .hidden{
-
     display:none;
 }
 
 @media(max-width:768px){
 
     .card{
-
         padding:25px;
-
     }
 
     .logo{
-
         font-size:60px;
-
     }
 
     h1{
-
         font-size:28px;
-
     }
 
     .btn{
-
         width:100%;
     }
-
 }
 
 </style>
@@ -219,9 +142,7 @@ input{
 
     <div class="card">
 
-        <div class="logo">
-            🐕
-        </div>
+        <div class="logo">🐕</div>
 
         <h1>
             柴柴探險隊迎新基地
@@ -230,9 +151,7 @@ input{
         <div class="subtitle">
 
             歡迎來到新的冒險旅程！<br>
-
             完成探險任務，打造專屬柴柴身分卡，<br>
-
             認識新同學，一起快樂學習！
 
         </div>
@@ -248,179 +167,6 @@ input{
 
         <br>
 
-        <a href="#onboarding" class="btn">
-
-            🚀 開始探險
-
-        </a>
-
-    </div>
-
-    <!-- 報到區 -->
-
-    <div
-        id="onboarding"
-        class="card">
-
-        <h2>
-            🎒 入隊報到
-        </h2>
-
-        <p>
-            請填寫你的探險員資料
-        </p>
-
-        <input
-            id="name"
-            placeholder="你的名字">
-
-        <input
-            id="interest"
-            placeholder="你的興趣（例如：畫畫、音樂）">
-
-        <input
-            id="dream"
-            placeholder="你的夢想">
-
         <button
             class="btn"
-            onclick="generateCard()">
-
-            🐕 生成角色卡
-
-        </button>
-
-        <div
-            id="result"
-            class="result hidden">
-        </div>
-
-    </div>
-
-    <div class="footer" align="center">
-
-        Powered by 柴柴探險隊
-
-    </div>
-
-</div>
-
-<script>
-
-function generateCodeName(
-    interest,
-    dream
-){
-
-    if(
-        dream.includes("老師")
-    ){
-        return "夢想柴";
-    }
-
-    if(
-        interest.includes("畫")
-    ){
-        return "彩繪柴";
-    }
-
-    if(
-        interest.includes("音樂")
-    ){
-        return "音樂柴";
-    }
-
-    return "探險柴";
-}
-
-function generateCard(){
-
-    const name =
-        document.getElementById("name")
-        .value.trim();
-
-    const interest =
-        document.getElementById("interest")
-        .value.trim();
-
-    const dream =
-        document.getElementById("dream")
-        .value.trim();
-
-    if(
-        !name ||
-        !interest ||
-        !dream
-    ){
-
-        alert(
-            "請完成所有欄位"
-        );
-
-        return;
-
-    }
-
-    const codeName =
-        generateCodeName(
-            interest,
-            dream
-        );
-
-    const result =
-        document.getElementById(
-            "result"
-        );
-
-    result.classList.remove(
-        "hidden"
-    );
-
-    result.innerHTML = `
-
-        <h3>
-            🎉 入隊成功！
-        </h3>
-
-        <p class="codeName">
-            🐕 ${codeName}
-        </p>
-
-        <p>
-            <strong>探險員：</strong>
-            ${name}
-        </p>
-
-        <p>
-            <strong>興趣：</strong>
-            ${interest}
-        </p>
-
-        <p>
-            <strong>夢想：</strong>
-            ${dream}
-        </p>
-
-        <hr>
-
-        <p>
-
-        ${codeName} 喜歡透過
-        「${interest}」
-        探索世界，
-
-        並且朝著
-
-        「${dream}」
-
-        的夢想前進！
-
-        </p>
-
-    `;
-}
-
-</script>
-
-</body>
-</html>
+            onclick="startAdventure
