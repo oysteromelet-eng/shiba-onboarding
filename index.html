@@ -849,7 +849,47 @@ function resetData(){
     location.reload();
 
 }
+      
+function showAnonymousCard(){
 
+    document
+        .getElementById(
+            "step4"
+        )
+        .classList.remove(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "step5"
+        )
+        .classList.add(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "guessContainer"
+        )
+        .innerHTML = `
+
+            <p>📚 我喜歡數學</p>
+
+            <p>🎨 我的興趣是唱歌</p>
+
+            <p>🎵 我擅長吹笛子</p>
+
+            <p>🌟 我的夢想是 AI 高手</p>
+
+            <hr>
+
+            <p>❓ 猜猜我是誰？</p>
+
+        `;
+
+}
+      
 function generateCard(){
 
     const name =
