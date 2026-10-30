@@ -889,7 +889,53 @@ function showAnonymousCard(){
         `;
 
 }
-      
+  
+function finishAdventure(){
+
+    document
+        .getElementById(
+            "step5"
+        )
+        .classList.remove(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "step6"
+        )
+        .classList.add(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "completeContainer"
+        )
+        .innerHTML = `
+
+            <p>
+
+            🎉 恭喜完成所有探險任務！
+
+            </p>
+
+            <h3>
+
+            🐕 正式加入柴柴探險隊！
+
+            </h3>
+
+            <p>
+
+            歡迎成為新的探險夥伴！
+
+            </p>
+
+        `;
+
+}   
+
 function generateCard(){
 
     const name =
