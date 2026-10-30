@@ -336,26 +336,77 @@ function generateCodeName(
 
 }
 
+function generateBadges(
+    subject,
+    talent,
+    interest,
+    dream
+){
+
+    const badges = [];
+
+    if(subject.includes("數學")){
+        badges.push("📚 好學探索家");
+    }
+
+    if(subject.includes("自然")){
+        badges.push("🔬 科學冒險家");
+    }
+
+    if(talent.includes("唱")){
+        badges.push("🎵 音樂能量家");
+    }
+
+    if(interest.includes("畫")){
+        badges.push("🎨 創意小畫家");
+    }
+
+    if(interest.includes("閱讀")){
+        badges.push("📖 知識探索家");
+    }
+
+    if(dream.includes("老師")){
+        badges.push("🌟 夢想教育家");
+    }
+
+    if(dream.includes("科學")){
+        badges.push("🚀 未來發明家");
+    }
+
+    badges.push("🤝 友善合作王");
+
+    return badges;
+
+}
 
 function generateCard(){
 
-    const name =
-        document.getElementById("name")
-        .value.trim();
+const name =
+    document.getElementById("name")
+    .value.trim();
 
-    const interest =
-        document.getElementById("interest")
-        .value.trim();
+const subject =
+    document.getElementById("subject")
+    .value.trim();
 
-    const dream =
-        document.getElementById("dream")
-        .value.trim();
+const talent =
+    document.getElementById("talent")
+    .value.trim();
 
-    if(
-        name === "" ||
-        interest === "" ||
-        dream === ""
-    ){
+const interest =
+    document.getElementById("interest")
+    .value.trim();
+
+const dream =
+    document.getElementById("dream")
+    .value.trim();
+
+if(
+    name === "" ||
+    subject === "" ||
+    interest === "" ||
+    dream === ""
+){
 
         alert(
             "請完成所有欄位喔！"
@@ -364,11 +415,12 @@ function generateCard(){
         return;
     }
 
-    const codeName =
-        generateCodeName(
-            interest,
-            dream
-        );
+const codeName =
+    generateCodeName(
+        subject,
+        interest,
+        dream
+    );
 
     const result =
         document.getElementById(
