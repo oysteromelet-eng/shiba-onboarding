@@ -1088,8 +1088,28 @@ function finishAdventure(){
 
         `;
 
-}   
+}
+      
+function showWall(){
 
+    document
+        .getElementById(
+            "step6"
+        )
+        .classList.remove(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "step7"
+        )
+        .classList.add(
+            "active"
+        );
+
+}
+      
 function generateCard(){
 
     const name =
