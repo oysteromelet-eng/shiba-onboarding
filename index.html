@@ -281,30 +281,61 @@ function startAdventure(){
 }
 
 function generateCodeName(
+    subject,
     interest,
     dream
 ){
 
+    let first = "";
+    let second = "";
+
     if(
         dream.includes("老師")
     ){
-        return "夢想柴";
+        first = "夢想";
+    }
+    else if(
+        dream.includes("科學")
+    ){
+        first = "科學";
+    }
+    else if(
+        dream.includes("醫")
+    ){
+        first = "守護";
+    }
+    else{
+        first = "探險";
     }
 
     if(
+        subject.includes("數學")
+    ){
+        second = "智慧";
+    }
+    else if(
+        subject.includes("自然")
+    ){
+        second = "探索";
+    }
+    else if(
         interest.includes("畫")
     ){
-        return "彩繪柴";
+        second = "彩繪";
     }
-
-    if(
+    else if(
         interest.includes("音樂")
     ){
-        return "音樂柴";
+        second = "音樂";
+    }
+    else{
+        second = "勇氣";
     }
 
-    return "探險柴";
+    return first + second + "柴";
+
 }
+
 
 function generateCard(){
 
