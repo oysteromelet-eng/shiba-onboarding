@@ -382,7 +382,46 @@ function generateBadges(
     return badges;
 
 }
+function generateAnonymousCard(
+    subject,
+    talent,
+    interest,
+    dream
+){
 
+    const anonymousCard =
+        document.getElementById(
+            "anonymousCard"
+        );
+
+    anonymousCard.classList.remove(
+        "hidden"
+    );
+
+    anonymousCard.innerHTML = `
+
+        <h3>🎭 猜猜我是誰？</h3>
+
+        <p>📚 我喜歡 ${subject}</p>
+
+        <p>🎨 我的興趣是 ${interest}</p>
+
+        ${
+            talent
+            ? `<p>🎵 我擅長 ${talent}</p>`
+            : ""
+        }
+
+        <p>🌟 我的夢想是 ${dream}</p>
+
+        <hr>
+
+        <p>
+        ❓ 猜猜我是誰？
+        </p>
+
+    `;
+}
 function generateCard(){
 
 const name =
