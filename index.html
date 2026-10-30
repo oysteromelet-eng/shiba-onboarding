@@ -470,6 +470,11 @@ function generateAnonymousCard(
         </p>
 
     `;
+    localStorage.setItem(
+    "anonymousCard",
+    anonymousCard.innerHTML
+);
+
 }
 function generateCard(){
 
@@ -596,7 +601,11 @@ ${dream}，
 
 </p>
 `;
-generateAnonymousCard(
+localStorage.setItem(
+    "characterCard",
+    result.innerHTML
+);
+    generateAnonymousCard(
     subject,
     talent,
     interest,
