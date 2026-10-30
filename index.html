@@ -421,7 +421,19 @@ const codeName =
         interest,
         dream
     );
+const badges =
+    generateBadges(
+        subject,
+        talent,
+        interest,
+        dream
+    );
 
+const badgeHtml =
+    badges.map(
+        badge =>
+        `<li>${badge}</li>`
+    ).join("");
     const result =
         document.getElementById(
             "result"
@@ -437,7 +449,11 @@ const codeName =
         <p class="code-name">
             🐕 ${codeName}
         </p>
+<h3>🏅 特質徽章</h3>
 
+<ul>
+    ${badgeHtml}
+</ul>
         <p>
             <strong>探險員：</strong>
             ${name}
