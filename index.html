@@ -776,15 +776,47 @@ function showBadges(){
             "active"
         );
       
+const subject =
+    localStorage.getItem(
+        "subject"
+    );
+
+const talent =
+    localStorage.getItem(
+        "talent"
+    );
+
+const interest =
+    localStorage.getItem(
+        "interest"
+    );
+
+const dream =
+    localStorage.getItem(
+        "dream"
+    );
+
+const badges =
+    generateBadges(
+        subject,
+        talent,
+        interest,
+        dream
+    );
+
+const badgeHtml =
+    badges.map(
+        badge =>
+        `<li>${badge}</li>`
+    ).join("");
+
 document
     .getElementById(
         "badgesContainer"
     )
     .innerHTML = `
         <ul>
-            <li>📚 好學探索家</li>
-            <li>🎵 音樂能量家</li>
-            <li>🤝 友善合作王</li>
+            ${badgeHtml}
         </ul>
     `;
       
@@ -884,6 +916,26 @@ function resetData(){
       
 function showAnonymousCard(){
 
+const subject =
+    localStorage.getItem(
+        "subject"
+    );
+
+const talent =
+    localStorage.getItem(
+        "talent"
+    );
+
+const interest =
+    localStorage.getItem(
+        "interest"
+    );
+
+const dream =
+    localStorage.getItem(
+        "dream"
+    );
+      
     document
         .getElementById(
             "step4"
@@ -901,24 +953,40 @@ function showAnonymousCard(){
         );
 
     document
-        .getElementById(
-            "guessContainer"
-        )
-        .innerHTML = `
+    .getElementById(
+        "guessContainer"
+    )
+    .innerHTML = `
 
-            <p>📚 我喜歡數學</p>
+        <p>
+            📚 我喜歡 ${subject}
+        </p>
 
-            <p>🎨 我的興趣是唱歌</p>
+        <p>
+            🎨 我的興趣是 ${interest}
+        </p>
 
-            <p>🎵 我擅長吹笛子</p>
+        ${
+            talent
+            ? `
+            <p>
+                🎵 我擅長 ${talent}
+            </p>
+            `
+            : ""
+        }
 
-            <p>🌟 我的夢想是 AI 高手</p>
+        <p>
+            🌟 我的夢想是 ${dream}
+        </p>
 
-            <hr>
+        <hr>
 
-            <p>❓ 猜猜我是誰？</p>
+        <p>
+            ❓ 猜猜我是誰？
+        </p>
 
-        `;
+    `;
 
 }
   
