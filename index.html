@@ -389,6 +389,34 @@ input{
     </div>
 
 </div>
+      <div
+    id="step4"
+    class="step">
+
+    <div class="card">
+
+        <h2>
+            📖 柴柴故事
+        </h2>
+
+        <div
+            id="storyContainer">
+        </div>
+
+        <br>
+
+        <button
+            class="btn"
+            onclick="showAnonymousCard()">
+
+            🎭 解鎖猜猜我是誰
+
+        </button>
+
+    </div>
+
+</div>
+      
     <div
         id="anonymousCard"
         class="result hidden">
@@ -704,6 +732,50 @@ document
         </ul>
     `;
       
+}
+      
+function showStory(){
+
+    document
+        .getElementById(
+            "step3"
+        )
+        .classList.remove(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "step4"
+        )
+        .classList.add(
+            "active"
+        );
+
+    document
+        .getElementById(
+            "storyContainer"
+        )
+        .innerHTML = `
+
+            <p>
+
+            探險智慧柴
+            最喜歡研究數學。
+
+            也喜歡透過吹笛子
+            展現自己的特色。
+
+            最拿手的是唱歌。
+
+            未來希望成為AI大師，
+
+            並和夥伴一起快樂學習與成長！
+
+            </p>
+
+        `;
+
 }
       
 function resetData(){
