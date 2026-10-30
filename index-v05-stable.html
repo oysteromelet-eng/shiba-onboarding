@@ -1,1 +1,782 @@
 
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>🐕 柴柴探險隊迎新基地</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+    padding:20px;
+
+    font-family:
+        "Microsoft JhengHei",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #dbeafe
+        );
+
+    min-height:100vh;
+
+}
+
+.container{
+
+    max-width:900px;
+    margin:auto;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.1);
+
+}
+
+.hero{
+
+    text-align:center;
+
+}
+
+.logo{
+
+    font-size:80px;
+
+}
+
+h1,h2,h3{
+
+    color:#2563eb;
+
+}
+
+.subtitle{
+
+    line-height:1.8;
+
+    font-size:18px;
+
+    color:#475569;
+
+}
+
+.features{
+
+    max-width:320px;
+
+    margin:auto;
+
+    text-align:left;
+
+}
+
+.features p{
+
+    margin:10px 0;
+
+}
+
+.btn{
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:14px 30px;
+
+    border-radius:999px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    width:100%;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.form-section{
+
+    display:none;
+
+}
+
+.form-section.show{
+
+    display:block;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+}
+
+.result{
+
+    margin-top:20px;
+
+    background:#ecfdf5;
+
+    border:2px solid #10b981;
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.code-name{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#2563eb;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.footer{
+
+    text-align:center;
+
+    color:#64748b;
+
+    margin-top:20px;
+
+}
+
+@media(max-width:768px){
+
+    .card{
+
+        padding:25px;
+
+    }
+
+    .logo{
+
+        font-size:60px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- 首頁 -->
+
+    <div class="card hero">
+
+        <div class="logo">
+            🐕
+        </div>
+
+        <h1>
+            柴柴探險隊迎新基地
+        </h1>
+
+        <p class="subtitle">
+
+            歡迎來到新的冒險旅程！<br>
+
+            完成探險任務，打造專屬柴柴身分卡，<br>
+
+            認識新同學，一起快樂學習！
+
+        </p>
+
+        <div class="features">
+
+            <p>🏅 專屬柴柴代號</p>
+            <p>🏅 特質徽章</p>
+            <p>📖 柴柴故事</p>
+            <p>🎭 猜猜我是誰角色卡</p>
+
+        </div>
+
+        <br>
+
+        <button
+            class="btn"
+            onclick="startAdventure()">
+
+            🚀 開始探險
+
+        </button>
+
+    </div>
+
+    <!-- 報到區 -->
+
+    <div
+        id="onboarding"
+        class="card form-section">
+
+        <h2>
+            🎒 入隊報到
+        </h2>
+
+        <input
+            id="name"
+            placeholder="你的名字"
+            oninput="saveData()">
+
+        <input
+            id="subject"
+            placeholder="最喜歡的科目（例如：數學）"
+            oninput="saveData()">
+
+        <input
+            id="talent"
+            placeholder="我的專長（例如：唱歌）"
+            oninput="saveData()">
+
+        <input
+            id="interest"
+            placeholder="我的興趣（例如：畫畫、音樂）"
+            oninput="saveData()">
+
+        <input
+            id="dream"
+            placeholder="我的夢想"
+            oninput="saveData()">
+
+        <button
+            class="btn"
+            onclick="generateCard()">
+
+            🐕 生成角色卡
+
+        </button>
+
+        <br><br>
+
+        <button
+            class="btn"
+            onclick="resetData()">
+
+            🗑️ 重新開始
+
+        </button>
+
+        <div
+            id="result"
+            class="result hidden">
+        </div>
+
+    </div>
+
+    <div
+        id="anonymousCard"
+        class="result hidden">
+    </div>
+
+    <div class="footer">
+
+        Powered by 柴柴探險隊
+
+    </div>
+
+</div>
+
+<script>
+    function startAdventure(){
+
+    const onboarding =
+        document.getElementById(
+            "onboarding"
+        );
+
+    onboarding.classList.add(
+        "show"
+    );
+
+    onboarding.scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
+}
+
+window.onload = function(){
+
+    document.getElementById("name").value =
+        localStorage.getItem("name") || "";
+
+    document.getElementById("subject").value =
+        localStorage.getItem("subject") || "";
+
+    document.getElementById("talent").value =
+        localStorage.getItem("talent") || "";
+
+    document.getElementById("interest").value =
+        localStorage.getItem("interest") || "";
+
+    document.getElementById("dream").value =
+        localStorage.getItem("dream") || "";
+
+    const savedCard =
+        localStorage.getItem(
+            "characterCard"
+        );
+
+    if(savedCard){
+
+        document
+            .getElementById(
+                "result"
+            )
+            .innerHTML =
+            savedCard;
+
+        document
+            .getElementById(
+                "result"
+            )
+            .classList.remove(
+                "hidden"
+            );
+
+        document
+            .getElementById(
+                "onboarding"
+            )
+            .classList.add(
+                "show"
+            );
+
+    }
+
+    const savedAnonymous =
+        localStorage.getItem(
+            "anonymousCard"
+        );
+
+    if(savedAnonymous){
+
+        document
+            .getElementById(
+                "anonymousCard"
+            )
+            .innerHTML =
+            savedAnonymous;
+
+        document
+            .getElementById(
+                "anonymousCard"
+            )
+            .classList.remove(
+                "hidden"
+            );
+
+    }
+
+};
+
+function saveData(){
+
+    localStorage.setItem(
+        "name",
+        document.getElementById(
+            "name"
+        ).value
+    );
+
+    localStorage.setItem(
+        "subject",
+        document.getElementById(
+            "subject"
+        ).value
+    );
+
+    localStorage.setItem(
+        "talent",
+        document.getElementById(
+            "talent"
+        ).value
+    );
+
+    localStorage.setItem(
+        "interest",
+        document.getElementById(
+            "interest"
+        ).value
+    );
+
+    localStorage.setItem(
+        "dream",
+        document.getElementById(
+            "dream"
+        ).value
+    );
+
+}
+function generateCodeName(
+    subject,
+    interest,
+    dream
+){
+
+    let first = "探險";
+    let second = "勇氣";
+
+    if(
+        dream.includes("老師")
+    ){
+        first = "夢想";
+    }
+    else if(
+        dream.includes("科學")
+    ){
+        first = "科學";
+    }
+    else if(
+        dream.includes("醫")
+    ){
+        first = "守護";
+    }
+
+    if(
+        subject.includes("數學")
+    ){
+        second = "智慧";
+    }
+    else if(
+        subject.includes("自然")
+    ){
+        second = "探索";
+    }
+    else if(
+        interest.includes("畫")
+    ){
+        second = "彩繪";
+    }
+    else if(
+        interest.includes("音樂")
+    ){
+        second = "音樂";
+    }
+
+    return first + second + "柴";
+
+}
+
+function generateBadges(
+    subject,
+    talent,
+    interest,
+    dream
+){
+
+    const badges = [];
+
+    if(subject.includes("數學")){
+        badges.push("📚 好學探索家");
+    }
+
+    if(subject.includes("自然")){
+        badges.push("🔬 科學冒險家");
+    }
+
+    if(talent.includes("唱")){
+        badges.push("🎵 音樂能量家");
+    }
+
+    if(interest.includes("畫")){
+        badges.push("🎨 創意小畫家");
+    }
+
+    if(interest.includes("閱讀")){
+        badges.push("📖 知識探索家");
+    }
+
+    if(dream.includes("老師")){
+        badges.push("🌟 夢想教育家");
+    }
+
+    badges.push("🤝 友善合作王");
+
+    return badges;
+
+}
+
+function generateAnonymousCard(
+    subject,
+    talent,
+    interest,
+    dream
+){
+
+    const anonymousCard =
+        document.getElementById(
+            "anonymousCard"
+        );
+
+    anonymousCard.classList.remove(
+        "hidden"
+    );
+
+    anonymousCard.innerHTML = `
+
+        <h3>🎭 猜猜我是誰？</h3>
+
+        <p>📚 我喜歡 ${subject}</p>
+
+        <p>🎨 我的興趣是 ${interest}</p>
+
+        ${
+            talent
+            ? `<p>🎵 我擅長 ${talent}</p>`
+            : ""
+        }
+
+        <p>🌟 我的夢想是 ${dream}</p>
+
+        <hr>
+
+        <p>❓ 猜猜我是誰？</p>
+
+    `;
+
+    localStorage.setItem(
+        "anonymousCard",
+        anonymousCard.innerHTML
+    );
+
+}
+
+function resetData(){
+
+    if(
+        !confirm(
+            "確定要重新開始嗎？"
+        )
+    ){
+        return;
+    }
+
+    localStorage.clear();
+
+    location.reload();
+
+}
+
+function generateCard(){
+
+    const name =
+        document.getElementById(
+            "name"
+        ).value.trim();
+
+    const subject =
+        document.getElementById(
+            "subject"
+        ).value.trim();
+
+    const talent =
+        document.getElementById(
+            "talent"
+        ).value.trim();
+
+    const interest =
+        document.getElementById(
+            "interest"
+        ).value.trim();
+
+    const dream =
+        document.getElementById(
+            "dream"
+        ).value.trim();
+
+    if(
+        name === "" ||
+        subject === "" ||
+        interest === "" ||
+        dream === ""
+    ){
+        alert(
+            "請完成所有欄位喔！"
+        );
+        return;
+    }
+
+    const codeName =
+        generateCodeName(
+            subject,
+            interest,
+            dream
+        );
+
+    const badges =
+        generateBadges(
+            subject,
+            talent,
+            interest,
+            dream
+        );
+
+    const badgeHtml =
+        badges
+        .map(
+            badge =>
+            `<li>${badge}</li>`
+        )
+        .join("");
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+    result.classList.remove(
+        "hidden"
+    );
+
+    result.innerHTML = `
+
+        <h3>🎉 入隊成功！</h3>
+
+        <p class="code-name">
+            🐕 ${codeName}
+        </p>
+
+        <h3>🏅 特質徽章</h3>
+
+        <ul>
+            ${badgeHtml}
+        </ul>
+
+        <p>
+            <strong>探險員：</strong>
+            ${name}
+        </p>
+
+        <p>
+            <strong>最喜歡的科目：</strong>
+            ${subject}
+        </p>
+
+        <p>
+            <strong>專長：</strong>
+            ${talent}
+        </p>
+
+        <p>
+            <strong>興趣：</strong>
+            ${interest}
+        </p>
+
+        <p>
+            <strong>夢想：</strong>
+            ${dream}
+        </p>
+
+        <hr>
+
+        <h3>📖 柴柴故事</h3>
+
+        <p>
+
+        ${codeName}
+        最喜歡研究
+        ${subject}，
+
+        也喜歡透過
+        ${interest}
+        展現自己的特色。
+
+        ${
+            talent
+            ? `最拿手的是 ${talent}。`
+            : ""
+        }
+
+        未來希望
+        ${dream}，
+
+        並和夥伴一起快樂學習與成長！
+
+        </p>
+
+    `;
+
+    localStorage.setItem(
+        "characterCard",
+        result.innerHTML
+    );
+
+    generateAnonymousCard(
+        subject,
+        talent,
+        interest,
+        dream
+    );
+
+}
+
+</script>
+
+</body>
+
+</html>    
