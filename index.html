@@ -217,16 +217,20 @@ input{
         <p>請填寫你的探險員資料</p>
 
 <input
+  <input
     id="name"
-    placeholder="你的名字">
+    placeholder="你的名字"
+    oninput="saveData()">
 
 <input
     id="subject"
-    placeholder="最喜歡的科目（例如：數學）">
+    placeholder="最喜歡的科目（例如：數學）"
+    oninput="saveData()">
 
 <input
-    id="talent"
-    placeholder="我的專長（例如：唱歌）">
+    id="interest"
+    placeholder="我的興趣（例如：畫畫、音樂）"
+    oninput="saveData()">
 
 <input
     id="interest"
@@ -234,7 +238,8 @@ input{
 
 <input
     id="dream"
-    placeholder="我的夢想">
+    placeholder="我的夢想"
+    oninput="saveData()">
 
         <button
             class="btn"
@@ -301,7 +306,34 @@ window.onload = function(){
         localStorage.getItem("dream") || "";
 
 };
-function generateCodeName(
+function saveData(){
+
+    localStorage.setItem(
+        "name",
+        document.getElementById("name").value
+    );
+
+    localStorage.setItem(
+        "subject",
+        document.getElementById("subject").value
+    );
+
+    localStorage.setItem(
+        "talent",
+        document.getElementById("talent").value
+    );
+
+    localStorage.setItem(
+        "interest",
+        document.getElementById("interest").value
+    );
+
+    localStorage.setItem(
+        "dream",
+        document.getElementById("dream").value
+    );
+
+}function generateCodeName(
     subject,
     interest,
     dream
