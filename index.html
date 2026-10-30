@@ -283,7 +283,24 @@ function startAdventure(){
     });
 
 }
+window.onload = function(){
 
+    document.getElementById("name").value =
+        localStorage.getItem("name") || "";
+
+    document.getElementById("subject").value =
+        localStorage.getItem("subject") || "";
+
+    document.getElementById("talent").value =
+        localStorage.getItem("talent") || "";
+
+    document.getElementById("interest").value =
+        localStorage.getItem("interest") || "";
+
+    document.getElementById("dream").value =
+        localStorage.getItem("dream") || "";
+
+};
 function generateCodeName(
     subject,
     interest,
