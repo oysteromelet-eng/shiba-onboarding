@@ -792,6 +792,31 @@ document
       
 function showStory(){
 
+const codeName =
+    localStorage.getItem(
+        "codeName"
+    );
+
+const subject =
+    localStorage.getItem(
+        "subject"
+    );
+
+const talent =
+    localStorage.getItem(
+        "talent"
+    );
+
+const interest =
+    localStorage.getItem(
+        "interest"
+    );
+
+const dream =
+    localStorage.getItem(
+        "dream"
+    );
+      
     document
         .getElementById(
             "step3"
@@ -808,29 +833,36 @@ function showStory(){
             "active"
         );
 
-    document
-        .getElementById(
-            "storyContainer"
-        )
-        .innerHTML = `
+document
+    .getElementById(
+        "storyContainer"
+    )
+    .innerHTML = `
 
-            <p>
+        <p>
 
-            探險智慧柴
-            最喜歡研究數學。
+        ${codeName}
+        最喜歡研究
+        ${subject}。
 
-            也喜歡透過吹笛子
-            展現自己的特色。
+        也喜歡透過
+        ${interest}
+        展現自己的特色。
 
-            最拿手的是唱歌。
+        ${
+            talent
+            ? `最拿手的是 ${talent}。`
+            : ""
+        }
 
-            未來希望成為AI大師，
+        未來希望
+        ${dream}，
 
-            並和夥伴一起快樂學習與成長！
+        並和夥伴一起快樂學習與成長！
 
-            </p>
+        </p>
 
-        `;
+    `;
 
 }
       
@@ -1061,7 +1093,32 @@ document
         "characterCard",
         result.innerHTML
     );
+      
+localStorage.setItem(
+    "codeName",
+    codeName
+);
 
+      localStorage.setItem(
+    "subject",
+    subject
+);
+
+localStorage.setItem(
+    "talent",
+    talent
+);
+
+localStorage.setItem(
+    "interest",
+    interest
+);
+
+localStorage.setItem(
+    "dream",
+    dream
+);
+      
 }
 
 </script>
