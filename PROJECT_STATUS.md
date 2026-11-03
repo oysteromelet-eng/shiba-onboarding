@@ -50,23 +50,55 @@ Firestore：
 
 Spark 免費方案
 
-## 下一步
+### Firestore Collection
 
-V0.7-2
+✅ Collection 建立完成
 
-建立 Collection：
+Collection Name：
 
 shibas
 
-目標資料格式：
+✅ 第一筆測試資料建立完成
 
-{
-  "codeName": "",
-  "subject": "",
-  "talent": "",
-  "interest": "",
-  "dream": ""
-}
+測試資料：
+
+codeName : 測試柴柴
+
+subject : 數學
+
+talent : 唱歌
+
+interest : 畫畫
+
+dream : 老師
+
+## 下一步
+
+V0.7-3
+
+建立網站與 Firebase 連線
+
+↓
+
+完成入隊時
+
+自動寫入 Firestore
+
+↓
+
+Step7 柴柴牆
+
+讀取 Firestore 資料
+
+## Firebase Web App
+
+✅ Web App 已建立
+
+App Name：
+
+shiba-onboarding-web
+
+✅ firebaseConfig 已取得
 
 ## 長期規劃
 
