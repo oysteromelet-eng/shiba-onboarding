@@ -1264,7 +1264,44 @@ localStorage.setItem(
 }
 
 </script>
+      
+<script type="module">
+      
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
+const firebaseConfig = {
+
+  apiKey: "AIzaSyDxgoFAt0nnxRrf4NMNCDAToF2l0eNl9d4",
+
+  authDomain:
+  "shiba-adventure-team.firebaseapp.com",
+
+  projectId:
+  "shiba-adventure-team",
+
+  storageBucket:
+  "shiba-adventure-team.firebasestorage.app",
+
+  messagingSenderId:
+  "681994683430",
+
+  appId:
+  "1:681994683430:web:15d55e94784951455f92e7"
+
+};
+
+const app =
+    initializeApp(
+        firebaseConfig
+    );
+
+console.log(
+    "Firebase 初始化成功 ✅"
+);
+      
+</script>
+      
 </body>
 
 </html>    
