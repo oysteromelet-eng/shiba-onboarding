@@ -110,6 +110,13 @@ shiba-onboarding-web
 
 ✅ firebaseConfig 已取得
 
+✅ Firebase SDK 已接入
+
+✅ Firebase 初始化成功
+
+Date:
+2026-11-05
+
 ## 長期規劃
 
 V0.8
