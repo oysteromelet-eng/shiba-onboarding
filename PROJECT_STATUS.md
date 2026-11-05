@@ -74,15 +74,19 @@ dream : 老師
 
 ## 下一步
 
+下一步：
+
 V0.7-3
 
-建立網站與 Firebase 連線
+將網站接上 Firebase SDK
 
 ↓
 
 完成入隊時
 
-自動寫入 Firestore
+自動新增資料到
+
+Firestore → shibas
 
 ↓
 
@@ -90,13 +94,19 @@ Step7 柴柴牆
 
 讀取 Firestore 資料
 
-## Firebase Web App
-
 ✅ Web App 已建立
 
 App Name：
 
 shiba-onboarding-web
+
+✅ firebaseConfig 已取得
+
+✅ Collection：shibas 已建立
+
+✅ 第一次測試資料已建立
+
+✅ Web App：shiba-onboarding-web
 
 ✅ firebaseConfig 已取得
 
