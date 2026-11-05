@@ -1045,7 +1045,9 @@ const dream =
 }
   
 function finishAdventure(){
-
+      window
+    .saveShibaToFirestore();
+      
     document
         .getElementById(
             "step5"
@@ -1308,6 +1310,68 @@ const db =
         app
     );
 
+window.saveShibaToFirestore =
+async function(){
+
+    try{
+
+        await addDoc(
+
+            collection(
+                db,
+                "shibas"
+            ),
+
+            {
+
+                codeName:
+                    localStorage.getItem(
+                        "codeName"
+                    ),
+
+                subject:
+                    localStorage.getItem(
+                        "subject"
+                    ),
+
+                talent:
+                    localStorage.getItem(
+                        "talent"
+                    ),
+
+                interest:
+                    localStorage.getItem(
+                        "interest"
+                    ),
+
+                dream:
+                    localStorage.getItem(
+                        "dream"
+                    ),
+
+                createdAt:
+                    new Date()
+                        .toISOString()
+
+            }
+
+        );
+
+        console.log(
+            "柴柴已寫入 Firestore ✅"
+        );
+
+    }catch(error){
+
+        console.error(
+            "Firestore 寫入失敗 ❌",
+            error
+        );
+
+    }
+
+};
+      
 console.log(
     "Firestore 連線成功 ✅"
 );
