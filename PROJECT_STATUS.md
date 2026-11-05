@@ -176,8 +176,19 @@ Step7 柴柴牆
 ↓
 
 從 Firestore 讀取所有 shibas
+✅ V0.7-3
 
+Firestore 寫入成功
+
+✅ 第一隻網站柴柴建立成功
 ↓
+✅ V0.7-4
+
+Firestore 讀取成功
+
+✅ Step7 柴柴牆讀取成功
+
+✅ 真正班級版柴柴牆完成
 
 顯示全班柴柴
 V0.8
