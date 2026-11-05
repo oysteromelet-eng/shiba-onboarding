@@ -122,12 +122,29 @@ shiba-onboarding-web
 
 ✅ Firebase Script 成功讀取 localStorage
 
-驗證結果：
+✅ Firestore 寫入成功
 
-目前柴柴代號可正確讀取
+✅ 第一隻網站上傳柴柴成功
 
-Date:
-2026-11-05
+Collection：
+shibas
+
+已驗證：
+
+完成入隊
+
+↓
+
+saveShibaToFirestore()
+
+↓
+
+addDoc()
+
+↓
+
+Firestore 成功建立文件
+
 
 ## 長期規劃
 
