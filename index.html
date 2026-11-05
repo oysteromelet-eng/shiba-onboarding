@@ -1270,6 +1270,13 @@ localStorage.setItem(
 import { initializeApp }
 from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
+import {
+    getFirestore,
+    collection,
+    addDoc
+}
+from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
 const firebaseConfig = {
 
   apiKey: "AIzaSyDxgoFAt0nnxRrf4NMNCDAToF2l0eNl9d4",
@@ -1295,6 +1302,15 @@ const app =
     initializeApp(
         firebaseConfig
     );
+
+const db =
+    getFirestore(
+        app
+    );
+
+console.log(
+    "Firestore 連線成功 ✅"
+);
 
 console.log(
     "Firebase 初始化成功 ✅"
