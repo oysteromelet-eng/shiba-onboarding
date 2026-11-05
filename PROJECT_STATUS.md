@@ -126,6 +126,26 @@ shiba-onboarding-web
 
 ✅ 第一隻網站上傳柴柴成功
 
+✅ Firebase SDK 已接入
+
+✅ Firestore 連線成功
+
+✅ localStorage 讀取成功
+
+✅ 第一隻網站柴柴寫入成功
+
+驗證：
+
+完成入隊
+
+↓
+
+addDoc()
+
+↓
+
+Firestore 建立新文件
+
 Collection：
 shibas
 
@@ -147,7 +167,19 @@ Firestore 成功建立文件
 
 
 ## 長期規劃
+下一步：
 
+V0.7-4
+
+Step7 柴柴牆
+
+↓
+
+從 Firestore 讀取所有 shibas
+
+↓
+
+顯示全班柴柴
 V0.8
 角色卡下載（PDF）
 
