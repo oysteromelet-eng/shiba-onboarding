@@ -114,6 +114,18 @@ shiba-onboarding-web
 
 ✅ Firebase 初始化成功
 
+✅ Firebase SDK 已接入
+
+✅ Firebase 初始化成功
+
+✅ Firestore 連線成功
+
+✅ Firebase Script 成功讀取 localStorage
+
+驗證結果：
+
+目前柴柴代號可正確讀取
+
 Date:
 2026-11-05
 
