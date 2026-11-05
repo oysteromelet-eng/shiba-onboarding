@@ -2,13 +2,79 @@
 
 ## 目前版本
 
-V0.7 Milestone 1
+V0.7 Firebase Class Wall Complete
+
+---
 
 ## 網站網址
 
 https://oysteromelet-eng.github.io/shiba-onboarding/
 
-## 已完成功能
+---
+
+# 已完成功能
+
+## ✅ V0.5 基礎角色版
+
+- GitHub Pages 上線
+- 柴柴代號產生器
+- 特質徽章
+- 柴柴故事
+- 猜猜我是誰
+- localStorage 自動儲存
+- localStorage 自動恢復
+
+---
+
+## ✅ V0.6 探險關卡版
+
+Step0 首頁
+
+↓
+
+Step1 入隊報到
+
+↓
+
+Step2 柴柴代號
+
+↓
+
+Step3 特質徽章
+
+↓
+
+Step4 柴柴故事
+
+↓
+
+Step5 猜猜我是誰
+
+↓
+
+Step6 完成入隊
+
+---
+
+## ✅ V0.7 班級柴柴牆
+
+Step7 柴柴牆
+
+---
+
+# 已完成全動態化
+
+✅ 柴柴代號
+
+✅ 特質徽章
+
+✅ 柴柴故事
+
+✅ 猜猜我是誰
+
+---
+
+# 已完成驗證
 
 ✅ Step0 首頁
 
@@ -26,39 +92,49 @@ https://oysteromelet-eng.github.io/shiba-onboarding/
 
 ✅ Step7 柴柴牆
 
-## 已完成全動態化
+---
 
-✅ 柴柴代號
+# Firebase
 
-✅ 特質徽章
+## Firebase Project
 
-✅ 柴柴故事
-
-✅ 猜猜我是誰
-
-## Firebase
-
-Project：
+Project Name：
 
 shiba-adventure-team
 
-Firestore：
+狀態：
 
 ✅ 已建立
+
+---
+
+## Firestore Database
+
+✅ 已建立
+
+Database：
+
+(default)
 
 方案：
 
 Spark 免費方案
 
-### Firestore Collection
+---
 
-✅ Collection 建立完成
+## Firestore Collection
 
 Collection Name：
 
 shibas
 
-✅ 第一筆測試資料建立完成
+✅ 已建立
+
+---
+
+## Firestore 測試資料
+
+✅ 第一筆測試文件建立成功
 
 測試資料：
 
@@ -72,84 +148,45 @@ interest : 畫畫
 
 dream : 老師
 
-## 下一步
+---
 
-下一步：
-
-V0.7-3
-
-將網站接上 Firebase SDK
-
-↓
-
-完成入隊時
-
-自動新增資料到
-
-Firestore → shibas
-
-↓
-
-Step7 柴柴牆
-
-讀取 Firestore 資料
-
-✅ Web App 已建立
+## Firebase Web App
 
 App Name：
 
 shiba-onboarding-web
 
-✅ firebaseConfig 已取得
-
-✅ Collection：shibas 已建立
-
-✅ 第一次測試資料已建立
-
-✅ Web App：shiba-onboarding-web
+✅ 已建立
 
 ✅ firebaseConfig 已取得
 
-✅ Firebase SDK 已接入
+---
 
-✅ Firebase 初始化成功
+## Firebase SDK
 
-✅ Firebase SDK 已接入
+✅ Firebase SDK 已接入 index.html
 
 ✅ Firebase 初始化成功
 
 ✅ Firestore 連線成功
 
-✅ Firebase Script 成功讀取 localStorage
+✅ Firebase Script 可讀取 localStorage
 
-✅ Firestore 寫入成功
+驗證結果：
 
-✅ 第一隻網站上傳柴柴成功
+成功讀取 codeName
 
-✅ Firebase SDK 已接入
+---
 
-✅ Firestore 連線成功
+## Firestore 寫入
 
-✅ localStorage 讀取成功
+✅ saveShibaToFirestore() 建立完成
 
-✅ 第一隻網站柴柴寫入成功
+✅ 完成入隊後自動寫入 Firestore
 
-驗證：
+✅ 第一隻網站柴柴上傳成功
 
-完成入隊
-
-↓
-
-addDoc()
-
-↓
-
-Firestore 建立新文件
-
-Collection：
-shibas
-
-已驗證：
+流程：
 
 完成入隊
 
@@ -163,42 +200,117 @@ addDoc()
 
 ↓
 
-Firestore 成功建立文件
-
-
-## 長期規劃
-下一步：
-
-V0.7-4
-
-Step7 柴柴牆
+Firestore
 
 ↓
 
-從 Firestore 讀取所有 shibas
-✅ V0.7-3
+shibas Collection
 
-Firestore 寫入成功
+---
 
-✅ 第一隻網站柴柴建立成功
+## Firestore 讀取
+
+✅ loadShibaWall() 建立完成
+
+✅ getDocs() 成功
+
+✅ 柴柴牆讀取成功
+
+流程：
+
+Firestore
+
 ↓
-✅ V0.7-4
 
-Firestore 讀取成功
+讀取 shibas Collection
 
-✅ Step7 柴柴牆讀取成功
+↓
 
-✅ 真正班級版柴柴牆完成
+動態建立柴柴牆
 
-顯示全班柴柴
-V0.8
-角色卡下載（PDF）
+↓
 
-V0.9
-全班同步猜猜我是誰
+顯示所有柴柴
 
-## 最後更新
+---
 
-Firebase Project 建立完成
+# 目前已完成成果
 
-Firestore 建立完成
+✅ 本機版柴柴牆
+
+✅ Firebase 雲端資料庫
+
+✅ Firestore 文件寫入
+
+✅ Firestore 文件讀取
+
+✅ 雲端班級柴柴牆
+
+---
+
+# 下一階段規劃
+
+## V0.8 角色卡下載
+
+- 列印模式
+- PDF 匯出
+- 個人角色卡下載
+
+---
+
+## V0.8 猜猜我是誰班級版
+
+- 匿名提示卡
+- 點擊揭曉身份
+- 班級破冰活動模式
+
+---
+
+## V0.9 教師儀表板
+
+- 全班夢想統計
+- 全班興趣統計
+- 全班專長統計
+- 柴柴數量統計
+
+---
+
+# 備份檔案
+
+✅ index-backup.html
+
+✅ index-v05-stable.html
+
+✅ index-v06-step2-working.html
+
+✅ index-v06-step3-working.html
+
+✅ index-v07-shiba-wall-milestone.html
+
+建議新增：
+
+✅ index-v07-firestore-complete.html
+
+---
+
+# 最後更新
+
+V0.7 Firebase 班級版完成
+
+已達成：
+
+✅ Firebase Project
+
+✅ Firestore
+
+✅ Web App
+
+✅ SDK
+
+✅ 雲端寫入
+
+✅ 雲端讀取
+
+✅ 班級柴柴牆
+
+🏫 第一版全班共用柴柴牆正式完成！
