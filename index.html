@@ -1110,6 +1110,9 @@ function showWall(){
             "active"
         );
 
+      window
+    .loadShibaWall();
+
 }
       
 function generateCard(){
@@ -1275,7 +1278,8 @@ from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import {
     getFirestore,
     collection,
-    addDoc
+    addDoc,
+    getDocs
 }
 from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
@@ -1371,6 +1375,77 @@ async function(){
     }
 
 };
+
+window.loadShibaWall =
+async function(){
+
+    try{
+
+        const snapshot =
+            await getDocs(
+                collection(
+                    db,
+                    "shibas"
+                )
+            );
+
+        let html = "";
+
+        snapshot.forEach(
+            (doc) => {
+
+                const shiba =
+                    doc.data();
+
+                html += `
+
+                    <div class="result">
+
+                        🐕 ${shiba.codeName}
+
+                        <br>
+
+                        📚 ${shiba.subject}
+
+                        <br>
+
+                        🌟 ${shiba.dream}
+
+                    </div>
+
+                    <br>
+
+                `;
+
+            }
+        );
+
+        const wall =
+            document.getElementById(
+                "wallContainer"
+            );
+
+        if(wall){
+
+            wall.innerHTML =
+                html;
+
+        }
+
+        console.log(
+            "柴柴牆讀取成功 ✅"
+        );
+
+    }catch(error){
+
+        console.error(
+            "柴柴牆讀取失敗 ❌",
+            error
+        );
+
+    }
+
+};      
       
 console.log(
     "Firestore 連線成功 ✅"
