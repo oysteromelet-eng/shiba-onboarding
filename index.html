@@ -460,7 +460,15 @@ input{
         </div>
 
         <br>
+          
+<button
+    class="btn"
+    onclick="downloadCharacterCard()">
 
+    📄 下載我的角色卡
+
+</button>
+          
 <button
     class="btn"
     onclick="showWall()">
@@ -1112,6 +1120,102 @@ function showWall(){
 
       window
     .loadShibaWall();
+
+}
+
+function downloadCharacterCard(){
+
+    const codeName =
+        localStorage.getItem(
+            "codeName"
+        );
+
+    const subject =
+        localStorage.getItem(
+            "subject"
+        );
+
+    const talent =
+        localStorage.getItem(
+            "talent"
+        );
+
+    const interest =
+        localStorage.getItem(
+            "interest"
+        );
+
+    const dream =
+        localStorage.getItem(
+            "dream"
+        );
+
+    const cardWindow =
+        window.open(
+            "",
+            "_blank"
+        );
+
+    cardWindow.document.write(`
+
+        <html>
+
+        <head>
+
+            <title>
+                柴柴角色卡
+            </title>
+
+        </head>
+
+        <body
+            style="
+                font-family:sans-serif;
+                padding:30px;
+            "
+        >
+
+            <h1>
+                🐕 ${codeName}
+            </h1>
+
+            <hr>
+
+            <p>
+                📚 最喜歡的科目：
+                ${subject}
+            </p>
+
+            <p>
+                🎵 我的專長：
+                ${talent}
+            </p>
+
+            <p>
+                🎨 我的興趣：
+                ${interest}
+            </p>
+
+            <p>
+                🌟 我的夢想：
+                ${dream}
+            </p>
+
+            <hr>
+
+            <h3>
+                柴柴探險隊正式隊員
+            </h3>
+
+        </body>
+
+        </html>
+
+    `);
+
+    cardWindow.document.close();
+
+    cardWindow.print();
 
 }
       
