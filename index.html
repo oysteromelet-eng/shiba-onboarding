@@ -858,6 +858,7 @@ const dream =
         "dream"
     );
 
+      
 const badges =
     generateBadges(
         subject,
@@ -1150,6 +1151,14 @@ function downloadCharacterCard(){
             "dream"
         );
 
+      const badgeList =
+    generateBadges(
+        subject,
+        talent,
+        interest,
+        dream
+    );
+      
     const cardWindow =
         window.open(
             "",
@@ -1196,6 +1205,23 @@ function downloadCharacterCard(){
     柴柴探險隊正式隊員證
 </h2>
             <hr>
+
+<h3>
+    🏅 特質徽章
+</h3>
+
+<ul>
+
+    ${
+        badgeList
+            .map(
+                badge =>
+                `<li>${badge}</li>`
+            )
+            .join("")
+    }
+
+</ul>
 
             <p>
                 📚 最喜歡的科目：
