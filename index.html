@@ -1865,16 +1865,6 @@ async function(){
                 leaderboardQuery
             );
 
-        let rankingHtml = `
-
-            <div class="result">
-
-                <h3>
-                    🏆 猜謎排行榜
-                </h3>
-
-        `;
-
        const bestScores = {};
 
 snapshot.forEach(
@@ -1917,6 +1907,54 @@ const sortedPlayers =
             b[1] - a[1]
     );
 
+const champion =
+    sortedPlayers[0];
+
+let rankingHtml = `
+
+    <div class="result">
+
+        <h3>
+            ⭐ 本週最佳猜謎王
+        </h3>
+
+        <p>
+
+            🥇 ${
+                champion
+                ?
+                champion[0]
+                :
+                "尚無資料"
+            }
+
+        </p>
+
+        <p>
+
+            🏆 最高分：
+            ${
+                champion
+                ?
+                champion[1]
+                :
+                0
+            }
+
+        </p>
+
+    </div>
+
+    <br>
+
+    <div class="result">
+
+        <h3>
+            🏆 猜謎排行榜
+        </h3>
+
+`;
+          
 let rank = 1;
 
 sortedPlayers.forEach(
