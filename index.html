@@ -1605,23 +1605,54 @@ async function(){
 
                 html += `
 
-                    <div class="result">
+    <div
+        class="result"
+        onclick="
+            this.querySelector('.answer').style.display='block'
+        "
+        style="
+            cursor:pointer;
+        "
+    >
 
-                        🐕 ${shiba.codeName}
+        <p>
+            📚 喜歡
+            ${shiba.subject}
+        </p>
 
-                        <br>
+        <p>
+            🎨 喜歡
+            ${shiba.interest}
+        </p>
 
-                        📚 ${shiba.subject}
+        <p>
+            🌟 想成為
+            ${shiba.dream}
+        </p>
 
-                        <br>
+        <p>
+            ❓ 猜猜我是誰？
+        </p>
 
-                        🌟 ${shiba.dream}
+        <div
+            class="answer"
+            style="
+                display:none;
+                margin-top:10px;
+                font-weight:bold;
+                color:#ff7b00;
+            "
+        >
 
-                    </div>
+            🐕 ${shiba.codeName}
 
-                    <br>
+        </div>
 
-                `;
+    </div>
+
+    <br>
+
+`;
 
             }
         );
