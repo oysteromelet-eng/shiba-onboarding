@@ -398,7 +398,43 @@ showGuessRanking()
 狀態：
 
 ✅ 完成
+### 第三階段：Firestore 全班排行榜
 
+✅ guess_leaderboard Collection 建立
+
+✅ Firestore 排行榜資料寫入
+
+✅ Firestore 排行榜讀取
+
+✅ 全班排行榜顯示
+
+目前架構：
+
+addPoint()
+
+↓
+
+saveGuessScore()
+
+↓
+
+Firestore
+
+↓
+
+guess_leaderboard
+
+↓
+
+loadGuessLeaderboard()
+
+↓
+
+排行榜畫面
+
+狀態：
+
+✅ 完成
 ---
 
 下一階段：
