@@ -1786,6 +1786,47 @@ html += `
     }
 
 };      
+
+ window.saveGuessScore =
+async function(score){
+
+    try{
+
+        await addDoc(
+
+            collection(
+                db,
+                "guess_leaderboard"
+            ),
+
+            {
+
+                codeName:
+                    localStorage.getItem(
+                        "codeName"
+                    ),
+
+                score:
+                    score
+
+            }
+
+        );
+
+        console.log(
+            "排行榜分數寫入成功 ✅"
+        );
+
+    }catch(error){
+
+        console.error(
+            "排行榜寫入失敗 ❌",
+            error
+        );
+
+    }
+
+};
       
 console.log(
     "Firestore 連線成功 ✅"
