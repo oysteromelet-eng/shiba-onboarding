@@ -1124,6 +1124,28 @@ function showWall(){
 
 }
 
+function addPoint(){
+
+    let score =
+        parseInt(
+            localStorage.getItem(
+                "guessScore"
+            )
+        ) || 0;
+
+    score++;
+
+    localStorage.setItem(
+        "guessScore",
+        score
+    );
+
+    alert(
+        `🏆 目前總分：${score}`
+    );
+
+}
+      
 function downloadCharacterCard(){
 
     const codeName =
