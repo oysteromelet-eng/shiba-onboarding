@@ -499,6 +499,12 @@ input{
 
         </p>
 
+<div
+    id="rankingContainer">
+</div>
+
+<br>
+          
         <div
             id="wallContainer">
 
@@ -1119,8 +1125,10 @@ function showWall(){
             "active"
         );
 
-      window
-    .loadShibaWall();
+    showGuessRanking();
+
+    window
+        .loadShibaWall();
 
 }
 
@@ -1143,6 +1151,69 @@ function addPoint(){
     alert(
         `🏆 目前總分：${score}`
     );
+
+}
+
+function showGuessRanking(){
+
+    const score =
+        parseInt(
+            localStorage.getItem(
+                "guessScore"
+            )
+        ) || 0;
+
+    let highScore =
+        parseInt(
+            localStorage.getItem(
+                "guessHighScore"
+            )
+        ) || 0;
+
+    if(
+        score > highScore
+    ){
+
+        highScore =
+            score;
+
+        localStorage.setItem(
+            "guessHighScore",
+            highScore
+        );
+
+    }
+
+    const ranking =
+        document.getElementById(
+            "rankingContainer"
+        );
+
+    if(ranking){
+
+        ranking.innerHTML = `
+
+            <div class="result">
+
+                <h3>
+                    🏆 猜猜我是誰排行榜
+                </h3>
+
+                <p>
+                    目前總分：
+                    ${score}
+                </p>
+
+                <p>
+                    ⭐ 最高紀錄：
+                    ${highScore}
+                </p>
+
+            </div>
+
+        `;
+
+    }
 
 }
       
