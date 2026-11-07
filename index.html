@@ -1875,29 +1875,71 @@ async function(){
 
         `;
 
-        let rank = 1;
+       const bestScores = {};
 
-        snapshot.forEach(
-            (doc) => {
+snapshot.forEach(
+    (doc) => {
 
-                const player =
-                    doc.data();
+        const player =
+            doc.data();
 
-                rankingHtml += `
+        const name =
+            player.codeName;
 
-                    <p>
+        const score =
+            player.score;
 
-                        ${rank}.
-                        🐕 ${player.codeName}
+        if(
 
-                        -
-                        ${player.score}分
+            !bestScores[name]
 
-                    </p>
+            ||
 
-                `;
+            score >
+            bestScores[name]
 
-                rank++;
+        ){
+
+            bestScores[name] =
+                score;
+
+        }
+
+    }
+);
+
+const sortedPlayers =
+    Object.entries(
+        bestScores
+    )
+    .sort(
+        (a, b) =>
+            b[1] - a[1]
+    );
+
+let rank = 1;
+
+sortedPlayers.forEach(
+    ([name, score]) => {
+
+        rankingHtml += `
+
+            <p>
+
+                ${rank}.
+                🐕 ${name}
+
+                -
+                ${score}分
+
+            </p>
+
+        `;
+
+        rank++;
+
+    }
+);
 
             }
         );
