@@ -1148,6 +1148,15 @@ function addPoint(){
         score
     );
 
+    console.log(
+    "addPoint 被執行 ✅"
+);
+      
+    window
+        .saveGuessScore(
+            score
+        );
+
     alert(
         `🏆 目前總分：${score}`
     );
