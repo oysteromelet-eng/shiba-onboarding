@@ -1591,7 +1591,9 @@ import {
     getFirestore,
     collection,
     addDoc,
-    getDocs
+    getDocs,
+    query,
+    orderBy
 }
 from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
@@ -1834,6 +1836,98 @@ async function(score){
 
         console.error(
             "排行榜寫入失敗 ❌",
+            error
+        );
+
+    }
+
+};
+
+window.loadGuessLeaderboard =
+async function(){
+
+    try{
+
+        const leaderboardQuery =
+            query(
+                collection(
+                    db,
+                    "guess_leaderboard"
+                ),
+                orderBy(
+                    "score",
+                    "desc"
+                )
+            );
+
+        const snapshot =
+            await getDocs(
+                leaderboardQuery
+            );
+
+        let rankingHtml = `
+
+            <div class="result">
+
+                <h3>
+                    🏆 猜謎排行榜
+                </h3>
+
+        `;
+
+        let rank = 1;
+
+        snapshot.forEach(
+            (doc) => {
+
+                const player =
+                    doc.data();
+
+                rankingHtml += `
+
+                    <p>
+
+                        ${rank}.
+                        🐕 ${player.codeName}
+
+                        -
+                        ${player.score}分
+
+                    </p>
+
+                `;
+
+                rank++;
+
+            }
+        );
+
+        rankingHtml += `
+
+            </div>
+
+        `;
+
+        const ranking =
+            document.getElementById(
+                "rankingContainer"
+            );
+
+        if(ranking){
+
+            ranking.innerHTML =
+                rankingHtml;
+
+        }
+
+        console.log(
+            "排行榜讀取成功 ✅"
+        );
+
+    }catch(error){
+
+        console.error(
+            "排行榜讀取失敗 ❌",
             error
         );
 
