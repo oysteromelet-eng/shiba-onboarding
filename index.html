@@ -1236,7 +1236,16 @@ function downloadCharacterCard(){
         localStorage.getItem(
             "codeName"
         );
-
+      
+      const memberId =
+    "STA-" +
+    new Date()
+        .getFullYear() +
+    "-" +
+    Math.floor(
+        Math.random() * 9000 + 1000
+    );
+      
     const subject =
         localStorage.getItem(
             "subject"
@@ -1310,6 +1319,18 @@ function downloadCharacterCard(){
 >
     柴柴探險隊正式隊員證
 </h2>
+
+<p
+    style="
+        text-align:center;
+        font-weight:bold;
+        color:#666;
+    "
+>
+    🆔 隊員編號：
+    ${memberId}
+</p>
+
             <hr>
 
 <h3>
