@@ -1237,14 +1237,30 @@ function downloadCharacterCard(){
             "codeName"
         );
       
-      const memberId =
-    "STA-" +
-    new Date()
-        .getFullYear() +
-    "-" +
-    Math.floor(
-        Math.random() * 9000 + 1000
+     let memberId =
+    localStorage.getItem(
+        "memberId"
     );
+
+if(
+    !memberId
+){
+
+    memberId =
+        "STA-" +
+        new Date()
+            .getFullYear() +
+        "-" +
+        Math.floor(
+            Math.random() * 9000 + 1000
+        );
+
+    localStorage.setItem(
+        "memberId",
+        memberId
+    );
+
+}
       
     const subject =
         localStorage.getItem(
