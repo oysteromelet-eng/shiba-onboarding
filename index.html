@@ -1237,7 +1237,27 @@ function downloadCharacterCard(){
             "codeName"
         );
       
-     let memberId =
+    const subject =
+        localStorage.getItem(
+            "subject"
+        );
+
+    const talent =
+        localStorage.getItem(
+            "talent"
+        );
+
+    const interest =
+        localStorage.getItem(
+            "interest"
+        );
+
+    const dream =
+        localStorage.getItem(
+            "dream"
+        );
+      
+let memberId =
     localStorage.getItem(
         "memberId"
     );
@@ -1262,26 +1282,6 @@ if(
 
 }
       
-    const subject =
-        localStorage.getItem(
-            "subject"
-        );
-
-    const talent =
-        localStorage.getItem(
-            "talent"
-        );
-
-    const interest =
-        localStorage.getItem(
-            "interest"
-        );
-
-    const dream =
-        localStorage.getItem(
-            "dream"
-        );
-
       const badgeList =
     generateBadges(
         subject,
