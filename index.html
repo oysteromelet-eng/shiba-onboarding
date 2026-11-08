@@ -1256,6 +1256,27 @@ function downloadCharacterCard(){
         localStorage.getItem(
             "dream"
         );
+
+let shibaRank =
+    "🥉 青銅探險家";
+
+if(
+    guessScore >= 10
+){
+
+    shibaRank =
+        "🥈 白銀探險家";
+
+}
+
+if(
+    guessScore >= 20
+){
+
+    shibaRank =
+        "🥇 黃金探險家";
+
+}
       
 let memberId =
     localStorage.getItem(
@@ -1281,6 +1302,13 @@ if(
     );
 
 }
+      
+ const guessScore =
+    parseInt(
+        localStorage.getItem(
+            "guessScore"
+        )
+    ) || 0;
       
       const badgeList =
     generateBadges(
@@ -1382,6 +1410,30 @@ if(
     ${memberId}
 </p>
 
+<div
+    style="
+        background:#fff3cd;
+        padding:15px;
+        border-radius:12px;
+        margin-top:15px;
+        text-align:center;
+    "
+>
+
+    <h3>
+        🏆 榮譽區
+    </h3>
+
+    <p>
+        🎭 猜謎積分：
+        ${guessScore}
+    </p>
+
+    <p>
+        ${shibaRank}
+    </p>
+
+</div>
             <hr>
 
 <h3
