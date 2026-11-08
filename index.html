@@ -1176,6 +1176,7 @@ function showGuessRanking(){
             )
         ) || 0;
 
+      
     let highScore =
         parseInt(
             localStorage.getItem(
@@ -1309,6 +1310,27 @@ if(
             "guessScore"
         )
     ) || 0;
+
+   let shibaRank =
+    "🥉 青銅探險家";
+
+if(
+    guessScore >= 10
+){
+
+    shibaRank =
+        "🥈 白銀探險家";
+
+}
+
+if(
+    guessScore >= 20
+){
+
+    shibaRank =
+        "🥇 黃金探險家";
+
+}
       
       const badgeList =
     generateBadges(
