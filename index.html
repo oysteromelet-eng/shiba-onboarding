@@ -1318,6 +1318,25 @@ if(
         interest,
         dream
     );
+
+   const badgeColors = {
+
+    "好學探索家":
+        "#dbeafe",
+
+    "音樂能量家":
+        "#ede9fe",
+
+    "創意小畫家":
+        "#fed7aa",
+
+    "友善合作王":
+        "#dcfce7",
+
+    "夢想教育家":
+        "#fef3c7"
+
+};
       
     const cardWindow =
         window.open(
@@ -1466,50 +1485,37 @@ if(
 </h3>
 <ul>
 
-const badgeColors = {
-
-    "好學探索家":
-        "#dbeafe",
-
-    "音樂能量家":
-        "#ede9fe",
-
-    "創意小畫家":
-        "#fed7aa",
-
-    "友善合作王":
-        "#dcfce7",
-
-    "夢想教育家":
-        "#fef3c7"
-
-};
-
     ${
-       badgeList
-    .map(
-        badge =>
+    badgeList
+        .map(
+            badge =>
 
-        `<span
+            `<span
 
-            style="
-                display:inline-block;
-                margin:8px;
-                padding:10px 15px;
-                border-radius:20px;
-                background:#dbeafe;
-                font-weight:bold;
-            "
+                style="
+                    display:inline-block;
+                    margin:8px;
+                    padding:10px 15px;
+                    border-radius:20px;
+                    background:${
+                        badgeColors[
+                            badge
+                        ]
+                        ||
+                        "#e5e7eb"
+                    };
+                    font-weight:bold;
+                "
 
-        >
+            >
 
-            🏅 ${badge}
+                🏅 ${badge}
 
-        </span>`
+            </span>`
 
-    )
-    .join("")
-    }
+        )
+        .join("")
+}
 
 </ul>
 
