@@ -1485,38 +1485,16 @@ if(
 </h3>
 <ul>
 
-    ${
+${
     badgeList
         .map(
             badge =>
-
-            `<span
-
-                style="
-                    display:inline-block;
-                    margin:8px;
-                    padding:10px 15px;
-                    border-radius:20px;
-                    background:${
-                        badgeColors[
-                            badge
-                        ]
-                        ||
-                        "#e5e7eb"
-                    };
-                    font-weight:bold;
-                "
-
-            >
-
+            `<li>
                 🏅 ${badge}
-
-            </span>`
-
+            </li>`
         )
         .join("")
-}
-
+}   
 </ul>
 
 <h3
