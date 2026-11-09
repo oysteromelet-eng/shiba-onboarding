@@ -1466,13 +1466,49 @@ if(
 </h3>
 <ul>
 
+const badgeColors = {
+
+    "好學探索家":
+        "#dbeafe",
+
+    "音樂能量家":
+        "#ede9fe",
+
+    "創意小畫家":
+        "#fed7aa",
+
+    "友善合作王":
+        "#dcfce7",
+
+    "夢想教育家":
+        "#fef3c7"
+
+};
+
     ${
-        badgeList
-            .map(
-                badge =>
-                `<li>${badge}</li>`
-            )
-            .join("")
+       badgeList
+    .map(
+        badge =>
+
+        `<span
+
+            style="
+                display:inline-block;
+                margin:8px;
+                padding:10px 15px;
+                border-radius:20px;
+                background:#dbeafe;
+                font-weight:bold;
+            "
+
+        >
+
+            🏅 ${badge}
+
+        </span>`
+
+    )
+    .join("")
     }
 
 </ul>
@@ -1521,7 +1557,11 @@ if(
 
 <h3
     style="
-        background:#dbeafe;
+       background:${
+    badgeColors[badge]
+    ||
+    "#e5e7eb"
+};
         padding:10px;
         border-radius:10px;
     "
