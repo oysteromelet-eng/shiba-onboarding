@@ -760,8 +760,28 @@ function generateBadges(
         badges.push("🔬 科學冒險家");
     }
 
+    if(subject.includes("英文")){
+        badges.push("🌍 國際交流家");
+    }
+
+    if(subject.includes("國語")){
+        badges.push("✍️ 文字創作家");
+    }
+
+    if(subject.includes("體育")){
+        badges.push("🏃 活力運動家");
+    }
+
+    if(talent.length > 0){
+        badges.push("🎯 技能達人");
+    }
+
     if(talent.includes("唱")){
         badges.push("🎵 音樂能量家");
+    }
+
+    if(talent.includes("畫")){
+        badges.push("🖌️ 藝術表現家");
     }
 
     if(interest.includes("畫")){
@@ -772,8 +792,28 @@ function generateBadges(
         badges.push("📖 知識探索家");
     }
 
+    if(interest.includes("運動")){
+        badges.push("⚽ 運動冒險家");
+    }
+
+    if(interest.includes("遊戲")){
+        badges.push("🎮 策略挑戰家");
+    }
+
+    if(dream.length > 0){
+        badges.push("🌟 夢想追尋者");
+    }
+
     if(dream.includes("老師")){
         badges.push("🌟 夢想教育家");
+    }
+
+    if(dream.includes("醫")){
+        badges.push("🩺 健康守護者");
+    }
+
+    if(dream.includes("工程")){
+        badges.push("⚙️ 未來工程師");
     }
 
     badges.push("🤝 友善合作王");
