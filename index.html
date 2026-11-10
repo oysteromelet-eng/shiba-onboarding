@@ -1483,20 +1483,28 @@ if(
 >
     🏅 特質徽章
 </h3>
-<ul>
+<ul
+    style="
+        padding-left:0;
+        margin-top:15px;
+    "
+>
 
 ${
     badgeList
         .map(
             badge =>
-           `<li
+          `<li
     style="
-        background:#ffe8a3;
-        padding:8px 12px;
+        background:#fff3cd;
+        border:2px solid #f4c542;
+        padding:10px;
         margin:8px 0;
-        border-radius:12px;
+        border-radius:15px;
         list-style:none;
         font-weight:bold;
+        color:#5c4400;
+        box-shadow:2px 2px 4px rgba(0,0,0,0.1);
     "
 >
     🏅 ${badge}
